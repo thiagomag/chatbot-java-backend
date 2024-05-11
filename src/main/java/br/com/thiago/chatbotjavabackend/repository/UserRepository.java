@@ -1,4 +1,5 @@
 package br.com.thiago.chatbotjavabackend.repository;
 
-public interface UserRepository {
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
 }
