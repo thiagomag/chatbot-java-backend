@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: chatbot-java-backend
+
+chatbot:
+  openai:
+    api:
+      key: ${OPENAI_API_KEY}
+    assistant:
+      id: ${OPENAI_ASSISTANT_ID}
