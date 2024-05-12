@@ -1,6 +1,10 @@
 spring:
   application:
     name: chatbot-java-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5436/chatbot
+    password: postgres
+    username: postgres
 
 chatbot:
   openai:

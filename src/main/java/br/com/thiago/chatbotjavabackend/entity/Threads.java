@@ -1,5 +1,9 @@
 package br.com.thiago.chatbotjavabackend.entity;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -8,8 +12,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,10 +20,11 @@ import org.springframework.data.relational.core.mapping.Table;
 @EqualsAndHashCode(callSuper = false)
 @ToString
 @Builder(toBuilder = true)
-@Table("threads")
+@Table(schema = "threads")
 public class Threads {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
     private String threadId;
