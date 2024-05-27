@@ -52,4 +52,13 @@ public class ChatBotService {
         }
         userRepository.save(user);
     }
+
+    public List<Long> getThreadsIdByUserId(Long userId) {
+        final var user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        return user.getThreads().stream()
+                .map(Threads::getId)
+                .toList();
+    }
 }
