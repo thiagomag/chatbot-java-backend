@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,5 +28,10 @@ public class ChatBotController {
     @PostMapping("/assistant/create")
     public ResponseEntity<String> createAssistant(@RequestBody AssistantRequest assistantRequest) {
         return ResponseEntity.ok(chatBotService.create(assistantRequest));
+    }
+
+    @GetMapping("/assistant/threads/{userId}")
+    public List<Long> getThreadsIdByUserId(@PathVariable Long userId) {
+        return chatBotService.getThreadsIdByUserId(userId);
     }
 }
