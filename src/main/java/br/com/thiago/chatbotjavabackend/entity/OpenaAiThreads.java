@@ -17,12 +17,12 @@ import org.jetbrains.annotations.NotNull;
 @EqualsAndHashCode(callSuper = false)
 @ToString
 @Builder(toBuilder = true)
+@Table(name = "threads")
 @Entity
-public class Threads {
+public class OpenaAiThreads {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @NotNull
     private String threadId;
+    @NotNull
+    private String assistantId;
 }

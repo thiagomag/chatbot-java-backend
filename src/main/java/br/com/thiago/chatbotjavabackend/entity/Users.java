@@ -31,5 +31,5 @@ public class Users {
     @JoinTable(name="users_threads",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name="thread_id"))
-    private List<Threads> threads;
+    private List<OpenaAiThreads> threads;
 }

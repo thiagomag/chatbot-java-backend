@@ -2,6 +2,8 @@ package br.com.thiago.chatbotjavabackend.openai;
 
 
 import br.com.thiago.chatbotjavabackend.controller.dto.ChatBotRequest;
+import com.theokanning.openai.assistants.Assistant;
+import com.theokanning.openai.assistants.AssistantRequest;
 import com.theokanning.openai.completion.chat.ChatMessageRole;
 import com.theokanning.openai.messages.Message;
 import com.theokanning.openai.messages.MessageRequest;
@@ -87,5 +89,9 @@ public class OpenAiClient {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Assistant createAssistant(AssistantRequest assistantRequest) {
+        return service.createAssistant(assistantRequest);
     }
 }
