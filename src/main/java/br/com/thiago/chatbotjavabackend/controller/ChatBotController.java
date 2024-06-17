@@ -31,7 +31,7 @@ public class ChatBotController {
     }
 
     @GetMapping("/assistant/threads/{userId}")
-    public List<Long> getThreadsIdByUserId(@PathVariable Long userId) {
+    public List<String> getThreadsIdByUserId(@PathVariable Long userId) {
         return chatBotService.getThreadsIdByUserId(userId);
     }
 }

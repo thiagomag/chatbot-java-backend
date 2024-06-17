@@ -75,12 +75,12 @@ public class ChatBotService {
                 .build();
     }
 
-    public List<Long> getThreadsIdByUserId(Long userId) {
+    public List<String> getThreadsIdByUserId(Long userId) {
         final var user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
         return user.getThreads().stream()
-                .map(Threads::getId)
+                .map(OpenaAiThreads::getThreadId)
                 .toList();
     }
 }
